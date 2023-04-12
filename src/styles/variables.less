@@ -1,0 +1,215 @@
+// 通用变量
+// https://github.com/ant-design/ant-design/blob/4.x-stable/components/style/themes/default.less
+
+/* --------------------- 自定义变量名称 ---------------------- */
+// *-lg 大尺寸在 1920 及以上；*-md 中等尺寸在 1440 及以上；*-sm 小尺寸在 1280 及以上；
+
+// >>> 圆角; 还有一个是 小 4，大 6，备注与下相同
+// 小标签及面积较小元素
+@radius-base-small: 2px;
+// 小标签及面积较小元素
+@radius-base-middle: 4px;
+// 小标签及面积较小元素
+@radius-base-large: 8px;
+
+// >>> 阴影
+// 常规内容区阴影
+@box-shadow-1: 4px 4px 8px 0 rgba(60, 60, 90, 0.1);
+// 弹出层阴影
+@box-shadow-2: 0 14px 28px -4px rgba(0, 10, 36, 0.1), 0 2px 6px -4px rgba(0, 10, 36, 0.06),
+  4px 10px 6px -4px rgba(0, 10, 36, 0.04);
+
+@colorMainPrimary: #2d69ff;
+@colorMainSuccess: #00c869;
+@colorMainError: #ff5f4a;
+@colorMainWarning: #ff9f25;
+
+@textColor: #1e283c;
+
+// 测试颜色是否生效 ----------------------------
+// >>> form-item
+// @ipt_colorLabel: red;
+// @ipt_labelIcon: #394352;
+// // 正常色
+// @ipt_color: red;
+// @ipt_colorPlace: green; // placeholder
+// @ipt_colorBor: green; // 边框
+// @ipt_colorIcon: red; // 表单 Icon
+// // 禁用色
+// @ipt_colorDis: yellow;
+// @ipt_colorPlaceDis: rgba(255, 255, 0, 0.219);
+// @ipt_colorBorDis: @ipt_colorBor;
+// @ipt_colorIconDis: @ipt_colorDis;
+// @ipt_bgDis: pink; // 禁用背景
+
+// >>> form-item
+@ipt_colorLabel: #1e283c;
+@ipt_labelIcon: #394352;
+// 正常色
+@ipt_color: #1e283c;
+@ipt_colorPlace: #d0d5e7; // placeholder
+@ipt_colorBor: #d0d5e7; // 边框
+@ipt_colorIcon: #1e283c; // 表单 Icon
+// 禁用色
+// @ipt_colorDis: #aeb6cf; // 设计稿色
+@ipt_colorDis: @ipt_color; // TODO: 根据产品要求单独调整
+@ipt_colorPlaceDis: @ipt_colorPlace;
+@ipt_colorBorDis: @ipt_colorBor;
+@ipt_colorIconDis: @ipt_colorIcon;
+@ipt_bgDis: #f1f3f6; // 禁用背景
+
+/* --------------------- 自定义变量名称 end ---------------------- */
+
+/* ----------------------- Antd 变量 ----------------------- */
+
+// -------- 色板 -----------
+// >>> 主题色板
+@primary-1: #f5faff;
+@primary-2: #d2e6ff;
+@primary-3: #a6c8ff;
+@primary-4: #7daaff;
+@primary-5: #508cff;
+// 主色
+@primary-6: #2d69ff;
+@primary-7: #0046f0;
+@primary-8: #1739ae;
+@primary-9: #031c8c;
+@primary-10: #011066;
+
+// >>> 错误
+@error-3: #ffd1c4;
+@error-5: #ff8873;
+@error-6: #ff5f4a;
+@error-7: #d94234;
+@error-gradient: linear-gradient(180deg, fade(@error-6, 100) 0%, fade(@error-6, 70) 100%);
+// >>> 成功
+@success-3: #72eda7;
+@success-5: #22d47b;
+@success-6: #00c869;
+@success-7: #00a15b;
+@success-gradient: linear-gradient(180deg, fade(@success-6, 100) 0%, fade(@success-6, 70) 100%);
+// >>> 提示
+@info-3: #c9e2ff;
+@info-5: #78acff;
+@info-6: #508cff;
+@info-7: #386bd9;
+@info-gradient: linear-gradient(180deg, fade(@info-6, 100) 0%, fade(@info-6, 70) 100%);
+// >>> 警告
+@warning-3: #ffe0a1;
+@warning-5: #ffb94f;
+@warning-6: #ff9f25;
+@warning-7: #d97e16;
+@warning-gradient: linear-gradient(180deg, fade(@warning-6, 100) 0%, fade(@warning-6, 70) 100%);
+
+// >>> 中性色板 内容文字色板；注释内容为规范注释
+@neutral-1: #fcfdff; // 背景底色
+@neutral-2: #f7f9fd; // 标题填充色
+@neutral-3: #f1f3f6; // 禁用输入框填充色、失败提示填充色
+@neutral-4: #ebeef5; // 分割线
+@neutral-5: #d0d6e6; // 无效、禁用文字，卡片边框
+@neutral-6: #aeb6cf; // 输入提醒、失效输入框文字、功能icon
+@neutral-7: #8a96af; // 提示、辅助说明文字
+@neutral-8: #5b6887; // 正文/标题，三级
+@neutral-9: #384461; // 正文/标题，二级
+@neutral-10: #1e283c; // 正文/标题，一级
+
+// -------- 功能色 -----------
+// >>> 全局主色
+@primary-color: @primary-6;
+@primary-color-hover: @primary-5;
+@primary-color-active: @primary-7;
+
+// >>> 错误
+@error-color: @error-6;
+@error-color-hover: @error-5;
+@error-color-active: @error-7;
+
+// >>> 成功
+@success-color: @success-6;
+@success-color-hover: @success-5;
+@success-color-active: @success-7;
+
+// >>> 提示
+@info-color: @info-6;
+@info-color-hover: @info-5;
+@info-color-active: @info-7;
+
+// >>> 警告
+@warning-color: @warning-6;
+@warning-color-hover: @warning-5;
+@warning-color-active: @warning-7;
+
+// -------- 基础变量 -----------
+@font-size-lg: 16px;
+@font-size-base: 14px;
+@font-size-sm: 12px;
+
+// Border Color
+// @border-color-base: #d2d2e6; // hsv(0, 0, 85%) base border outline a component
+@border-color-base: @ipt_colorBor; // hsv(0, 0, 85%) base border outline a component
+// @border-color-split: #d0d5e7; // hsv(0, 0, 94%) split border inside a component
+@border-color-split: @ipt_colorBor; // hsv(0, 0, 94%) split border inside a component
+
+// 组件/浮层圆角
+@border-radius-base: 4px;
+
+/* --------------------- Antd 变量 end ---------------------- */
+
+/* --------------------- 自定义变量名称 ---------------------- */
+
+/* --------------------- 自定义变量名称 end ---------------------- */
+
+/* --------------------- Antd 组件变量 ---------------------- */
+
+// -------- 组件样式 -----------
+
+// >>> Button
+@btn-default-color: #1c273e;
+@btn-default-border: #d2d2e6;
+
+@btn-disable-color: #aeb6cf;
+@btn-disable-bg: #f1f3f6;
+@btn-disable-border: #d0d5e7;
+
+@btn-font-size-lg: @font-size-lg;
+@btn-font-size-sm: @font-size-sm;
+
+// >>> Alert
+
+// >>> Modal
+@modal-footer-padding-vertical: 12px; // 10px
+@modal-footer-padding-horizontal: 24px; // 16px
+@modal-border-radius: 6px; // @border-radius-base = 2px
+
+// >>> Tabs
+@tabs-hover-color: @primary-6;
+@tabs-highlight-color: @primary-7;
+@tabs-ink-bar-color: @primary-7;
+
+// >>> Table
+@table-header-bg: linear-gradient(180deg, @primary-2 0%, @primary-1 100%);
+@table-header-cell-split-color: transparent;
+@table-header-sort-bg: linear-gradient(180deg, @primary-2 0%, @primary-1 100%);
+@table-header-sort-active-bg: linear-gradient(180deg, @primary-2 0%, @primary-1 100%);
+@table-body-sort-bg: #ffffff;
+@table-border-radius-base: 6px;
+@table-font-size: 16px;
+@table-border-color: @ipt_colorBor;
+
+// >>> input
+@input-placeholder-color: @ipt_colorPlace;
+@input-color: @ipt_color;
+@input-icon-color: @ipt_colorIcon;
+@input-border-color: @ipt_colorBor;
+
+@input-number-handler-border-color: @ipt_colorBor;
+@input-addon-bg: @background-color-light;
+@input-disabled-bg: @ipt_bgDis;
+@input-disabled-color: @ipt_colorDis;
+
+// Select
+// ---
+@select-border-color: @ipt_colorBor;
+@select-item-selected-color: @ipt_color;
+
+/* --------------------- Antd 组件变量 end ---------------------- */

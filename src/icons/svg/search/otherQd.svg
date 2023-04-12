@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>取得方式@4x</title>
+  <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-dasharray="0,0"
+    stroke-linecap="round" stroke-linejoin="round">
+    <g id="操作筛选区icon样式设计规范" transform="translate(-246.000000, -657.000000)" fill-rule="nonzero"
+      stroke="#1E283C" stroke-width="2">
+      <g id="取得方式" transform="translate(231.000000, 646.000000)">
+        <g transform="translate(16.872070, 12.666504)" id="Vector">
+          <path
+            d="M2.52098401,0 L13.7358516,0 C14.1981724,0 14.5881225,0.344240521 14.64546,0.80296799 L16.2496276,13.6362868 C16.3180109,14.1833992 15.8913942,14.666666 15.3400192,14.666666 L0.916798816,14.666666 C0.365428353,14.666666 -0.0611745322,14.1833992 0.00721338994,13.6362868 L1.61137988,0.80296799 C1.66872196,0.344240521 2.05866316,0 2.52098401,0 Z" />
+          <path
+            d="M4.00292969,4.58349609 C4.00292969,4.58349609 4.91959635,6.41682935 8.12792969,6.41682935 C10.2668186,6.41682935 11.6418186,5.80571826 12.2529297,4.58349609" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

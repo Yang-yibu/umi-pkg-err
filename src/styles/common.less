@@ -1,0 +1,435 @@
+// TODO: 按照 1440 尺寸编写；除内容区外的样式，都有可能不需要，如果需要后边可以通过 app.tsx 中的相关 token 减少一部分样式
+// TODO: 不同屏幕的将来计划，用 JS 识别，在 body 上添加 类名 处理
+// 单侧页边距 - 页面容器间距
+@layPad: 16px;
+// 栏间距 - 栅格
+@colPad: 16px;
+
+// 12px 14px 16px
+@textSize: 14px;
+// 特殊文字，设计稿中有的字色是黑，有的重定义了，不适合使用全局的 text-color
+// @textColor: @neutral-10;
+
+// 组件内部边框
+@cusBor: 1px solid @border-color-split;
+// 组件外部边框
+@cusBorOut: 1px solid @border-color-base;
+
+@import './variables-cus.less';
+@import './reset-antd.less';
+// 组件样式内容较多，单独拆出去
+@import './cusCmp/cusCtn.less';
+
+// 页面样式
+// ---------------------- 全局样式、可用做 mixin ------------
+// 将来会添加 meadia
+.textSize {
+  // font-size: @textSize;
+  font-size: 14px;
+
+  // .MQ1920 & {
+  //   font-size: 16px;
+  // }
+}
+// 页面元素间距
+.layPadInline {
+  padding-inline: @layPad;
+}
+// 内容区元素间间距
+.colPadInline {
+  padding-inline: @colPad;
+  // TODO:以下样式是生效的
+  // @media screen and (min-width: 1440px) {
+  //   // padding-inline: 30px;
+  // }
+  // @media screen and (min-width: 1920px) {
+  //   padding-inline: 24px;
+  // }
+}
+.colPadBlock {
+  padding-block: @colPad;
+}
+.colPad {
+  padding: @colPad;
+}
+
+.sideMenuBg {
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+    linear-gradient(180deg, rgba(80, 140, 255, 0.015) 0%, rgba(255, 255, 255, 0.3) 100%),
+    linear-gradient(180deg, rgba(240, 240, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+.bodyBg {
+  background: linear-gradient(180deg, rgba(205, 220, 255, 1) 0%, rgba(240, 240, 250, 1) 100%);
+}
+.contentBg {
+  background: #fff;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+// ---------------------- 全局样式、可用做 mixin ------------
+
+body {
+  color: @neutral-10 !important;
+  .textSize() !important;
+}
+
+// 基础布局，Header Sider Container
+// pro-layout 7.10.2 移除了 ant-pro
+.ant-pro,
+.sqRoot {
+  .ant-pro-layout {
+    @headerHeightContent: 48px;
+    @headerHeight: @headerHeightContent + @layPad * 2;
+
+    padding-left: @layPad;
+    .ant-pro-sider-mix {
+      height: calc(100% - @headerHeight - @layPad);
+      inset-block-start: calc(@headerHeight);
+    }
+    .headerContent-item {
+      line-height: @headerHeightContent;
+    }
+    .ant-layout-header {
+      // 尺寸由 app.tsx 中 header 设置
+      height: @headerHeight !important;
+      line-height: @headerHeight !important;
+    }
+
+    .logoAndTitle {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 37px;
+      }
+
+      h1 {
+        height: auto;
+        line-height: 1;
+      }
+      .title1 {
+        font-size: 24px;
+      }
+      .title2 {
+        margin-top: 8px;
+        color: #505a82;
+        font-weight: 500;
+        font-size: 13px;
+        text-align: justify;
+        text-align-last: justify;
+      }
+    }
+    .headerContent {
+      display: flex;
+      color: @textColor;
+      font-size: 18px;
+
+      /* stylelint-disable-next-line no-duplicate-selectors */
+      &-item {
+        padding: 0 16px;
+        // border-radius: 5px 5px 0 0;
+        border-radius: 5px;
+        &.active {
+          color: #fff;
+          background: linear-gradient(180deg, rgba(44, 104, 255, 1) 0%, rgba(103, 148, 254, 1) 90%);
+          box-shadow: 0 2px 5px rgba(40, 78, 176, 0.24313725490196078);
+          // background: linear-gradient(180deg, rgba(45, 105, 255, 1) 0%, rgba(80, 140, 255, 0.3) 100%);
+        }
+      }
+    }
+
+    .ant-pro-sider {
+      border: 1px solid rgba(#fff, 1);
+      border-radius: 6px;
+      user-select: none;
+      // background: linear-gradient(180deg, #dae7fc 0%, #fff 63.62%);
+      .sideMenuBg() !important;
+
+      .ant-layout-sider-children {
+        padding-top: 10px;
+        border: none;
+        // padding-inline: 16px;
+      }
+    }
+
+    // 有子菜单
+    // 子菜单
+    // 一级菜单
+    .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title,
+    .ant-menu-sub.ant-menu-inline > .ant-menu-item,
+    .ant-menu-inline > .ant-menu-item {
+      width: 100%;
+      height: 46px;
+      margin: 0;
+      line-height: 46px;
+      border-radius: 6px;
+
+      &.ant-menu-item-selected {
+        color: @primary-6;
+        background: linear-gradient(215.97deg, rgba(@primary-2, 1) 0%, rgba(@primary-1, 1) 100%);
+        border: 1px solid rgba(@primary-5, 0.3);
+      }
+    }
+    .ant-menu {
+      .textSize();
+
+      color: @textColor;
+    }
+
+    .ant-pro-sider-footer {
+      margin: 0 -8px;
+      // padding: 0 24px;
+      padding: 0 18px;
+
+      .sideMenuCollapse {
+        color: #d2d2e6;
+        font-size: 24px;
+        line-height: 64px;
+        border-top: @cusBor;
+        cursor: pointer;
+        transition: color ease-in 0.2s;
+
+        &:hover {
+          color: #2d69ff;
+        }
+      }
+    }
+
+    // 页面总背景
+    .ant-pro-layout-bg-list {
+      .bodyBg() !important;
+    }
+
+    .ant-pro-layout-container {
+      .ant-layout-header {
+        // padding-top: 8px;
+        .colPadInline();
+
+        background: transparent;
+        border: none;
+
+        .ant-pro-global-header {
+          height: 100%;
+          margin: 0;
+        }
+      }
+      .ant-pro-layout-content {
+        height: 100px;
+        padding: @layPad;
+        padding-top: 0;
+
+        // width: auto;
+        // margin: @layPad @layPad;
+        // background: #fff;
+        // border: 1px solid #fff;
+        // border-radius: 6px;
+      }
+    }
+  }
+
+  // dumi 组件库 iframe 模式的样式 - 浏览器单独页签打开
+  & > div > .pageContainer {
+    height: 100vh;
+  }
+  & .__dumi-default-previewer[data-iframe] .__dumi-default-previewer-demo > iframe {
+    // dumi 组件库 iframe 模式的样式 - 内嵌入
+    height: 400px;
+  }
+}
+
+.expContainer {
+  .ant-collapse-content-box {
+    // border: 1px solid #ff5f4a;
+  }
+  .border {
+    border: 1px solid #ff5f4a;
+  }
+}
+
+.ant-pro-setting-drawer-handle {
+  top: auto;
+  bottom: 20px;
+  transform: scale(0.7);
+  transform-origin: right;
+}
+
+.cusEmpty {
+  &.ant-empty {
+    color: #666;
+
+    .ant-empty-image {
+      width: 160px;
+      height: auto;
+      margin-inline: auto;
+
+      > img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+// 场景：Table 查询搜索区域表单 label 在表单上方显示
+.cusTableQuery {
+  .ant-form-vertical {
+    .ant-form-item-row {
+      position: relative;
+
+      .ant-form-item-label {
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        margin-top: 6px;
+        transform: translateY(-100%);
+        padding-block: 0;
+        padding-inline: 17px;
+
+        label {
+          position: relative;
+          height: auto;
+          color: #5b6887;
+          font-size: 12px;
+
+          &::after {
+            position: absolute;
+            top: auto;
+            right: -4px;
+            bottom: 3px;
+            left: -4px;
+            z-index: -1;
+            display: block;
+            height: 5px;
+            margin: 0;
+            // background: red;
+            // 要与背景色相同
+            background: #fff;
+            content: '';
+          }
+        }
+      }
+    }
+  }
+}
+
+// 场景：具有 Tabs 的表格
+.cusTabsTables {
+  background: #fff;
+  border-radius: 6px;
+
+  // 场景：工作台页面，Tab 和 Table 表体紧挨着
+  &.gztTable {
+    margin-top: 12px;
+
+    .ant-tabs-top {
+      .ant-tabs-nav {
+        padding: 0 @layPad;
+        background: linear-gradient(
+          268.52901089495197deg,
+          rgba(210, 231, 252, 1) 52%,
+          rgba(246, 251, 255, 1) 100%
+        );
+        border-radius: 6px 6px 0 0;
+        &::before {
+          border-color: rgba(202, 217, 242, 1);
+        }
+      }
+    }
+    .ant-table {
+      border-radius: 0;
+
+      table,
+      thead th {
+        border-radius: 0 !important;
+      }
+    }
+  }
+
+  .ant-tabs-top {
+    .ant-tabs-nav {
+      height: 36px;
+      margin: 0;
+      padding: 0 8px;
+    }
+  }
+  .ant-pro-table .ant-pro-table-search .ant-pro-query-filter {
+    // padding-top: 24px;
+    padding-top: 18px;
+  }
+
+  &-more {
+    margin: -5px -10px;
+    padding: 5px 10px;
+    cursor: pointer;
+
+    &:hover {
+      color: @primary-6;
+    }
+  }
+}
+
+// 场景：统计表
+.cusTableCensus {
+  // &.isMultiHeader 多级表头
+  .ant-table-thead > tr > th {
+    text-align: center;
+  }
+
+  .colNum {
+    // 普通数量
+    text-align: center;
+  }
+  .colNumMoney {
+    // 金额
+    text-align: right;
+  }
+  .colNumArea {
+    // 面积
+    text-align: right;
+  }
+}
+
+// 场景：页面容器上方通栏 Header，使用 CusCtnDiv(CusContainer) 且左树右边内容
+// 如果 Header 的高度有变化，
+//    定位模式需要在页面中调整 padTop 和 header 高度
+//    现在采用 flex 模式，不需要调整
+// 现在用于 Sheet 页面
+.pageContainer.isBoxBannerHeader {
+  display: flex;
+  flex-direction: column;
+  > .bannerHeader {
+    height: 48px;
+    line-height: 48px;
+    border-bottom: @cusBor;
+
+    .colPadInline();
+  }
+  > .cusLeftRightDiv {
+    flex: 1;
+    height: 100px;
+  }
+}
+
+// 场景：占满高度的容器
+.wrapLoading {
+  height: 100%;
+  > .ant-spin-container {
+    height: 100%;
+
+    > .pageContainer {
+      height: 100%;
+    }
+  }
+}
+.ant-pro-layout-container .ant-pro-layout-content {
+  > .ant-spin-nested-loading {
+    .wrapLoading();
+  }
+}

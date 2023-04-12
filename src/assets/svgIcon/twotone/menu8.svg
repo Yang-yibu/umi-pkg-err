@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Frame_Background_Mask_" data-name="Frame (Background/Mask)" width="1024" height="1024" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.606" y1="1.529" x2="0.047" y2="0.214" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1f50cd"/>
+      <stop offset="1" stop-color="#7ba9f8"/>
+    </linearGradient>
+  </defs>
+  <g id="Frame_8" data-name="Frame 8" transform="translate(-8 -8)">
+    <g id="Frame" transform="translate(8 8)">
+      <rect id="Frame_Background_Mask_2" data-name="Frame (Background/Mask)" width="1024" height="1024" fill="none"/>
+      <g id="Frame-2" data-name="Frame" clip-path="url(#clip-path)">
+        <path id="Vector" d="M1024,0V1024H0V0Z" fill="none"/>
+        <path id="Vector-2" data-name="Vector" d="M0,597.35V530.957H33.178V165.926H0V99.571H99.571V33.178A33.17,33.17,0,0,1,132.749,0h464.6a33.17,33.17,0,0,1,33.178,33.178V99.571h99.533v66.355H696.883v365.03h33.178V597.35Z" transform="translate(128 213.333)" fill="#b8cbec"/>
+        <path id="Vector-3" data-name="Vector" d="M497.779,298.675v0Zm-165.926,0h0Zm-165.926,0h0Zm530.957-90.086H0V99.571H99.571V33.178A33.17,33.17,0,0,1,132.749,0h464.6a33.17,33.17,0,0,1,33.178,33.178V99.571h99.533V208.589Z" transform="translate(128 213.333)" fill="url(#linear-gradient)"/>
+      </g>
+    </g>
+  </g>
+</svg>

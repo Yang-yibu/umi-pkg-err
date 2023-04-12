@@ -1,0 +1,22 @@
+.page-cxtj {
+  // &.pageContainer {
+  :global {
+    .cusLeftRightDiv-left {
+      display: flex;
+      flex-direction: column;
+
+      &:not(.collapsed) {
+        width: 300px;
+      }
+
+      .cusLeftRightDiv-content {
+        flex: 1;
+        height: 100px;
+        overflow: auto;
+        padding-block: 0;
+        padding-inline: 10px;
+      }
+    }
+  }
+  // }
+}

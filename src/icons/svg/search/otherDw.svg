@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 16 17" version="1.1" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>计量单位@4x</title>
+  <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="操作筛选区icon样式设计规范" transform="translate(-492.000000, -805.000000)">
+      <g id="计量单位" transform="translate(475.000000, 793.000000)">
+        <g transform="translate(17.000000, 12.743708)">
+          <polygon id="三角形" fill="#1E283C" points="3.5 1.2562922 6 4.7562922 1 4.7562922" />
+          <path d="" id="矩形" stroke="#1E283C" stroke-width="1.68" />
+          <path d="" id="矩形" stroke="#1E283C" stroke-width="1.68" />
+          <path d="" id="矩形" stroke="#1E283C" stroke-width="1.68" />
+          <path
+            d="M3.47219435,0.842520493 L6.16,4.52664834 L6.16,15.2562922 C6.16,15.300475 6.14209139,15.340475 6.11313708,15.3694293 C6.08418278,15.3983836 6.04418278,15.4162922 6,15.4162922 L6,15.4162922 L1,15.4162922 C0.95581722,15.4162922 0.91581722,15.3983836 0.886862915,15.3694293 C0.85790861,15.340475 0.84,15.300475 0.84,15.2562922 L0.84,15.2562922 L0.84,4.52107888 L3.36892289,0.908331887 C3.39426005,0.872135943 3.43186985,0.84963658 3.47219435,0.842520493 L3.47219435,0.842520493 Z"
+            id="形状结合" stroke="#1E283C" stroke-width="1.68" />
+          <rect id="矩形" stroke="#1E283C" stroke-width="1.68" x="9.84" y="1.0962922" width="5.32"
+            height="14.32" rx="1" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

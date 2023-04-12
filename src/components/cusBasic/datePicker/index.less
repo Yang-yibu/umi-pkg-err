@@ -1,0 +1,25 @@
+@ipt-prefix-cls: cusDate;
+
+.@{ipt-prefix-cls} {
+  &-wrapper {
+    .ant-picker {
+      // 按设计要求，需要占满容器
+      width: 100%;
+    }
+    .ant-picker-range {
+      padding-left: 30px;
+    }
+
+    // .labelShowIptTop
+    &.valueIsNotEmpty {
+      .ant-picker-input > input::placeholder {
+        opacity: 0;
+      }
+    }
+    &.labelShowIptTop {
+      .ant-picker-input > input::placeholder {
+        opacity: 1;
+      }
+    }
+  }
+}

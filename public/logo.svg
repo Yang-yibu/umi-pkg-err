@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="45px" viewBox="0 0 44 45" version="1.1" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="logo" transform="translate(-14.000000, -13.000000)">
+      <g id="Frame-427320016" transform="translate(14.144304, 13.946533)">
+        <path
+          d="M33.08248,20.4954958 L43.3302283,14.5833335 L17.7108575,0 L8.44846964,5.41948206 L33.08248,20.4954958 Z"
+          id="Vector-136" fill="#2D69FF"
+          transform="translate(25.889349, 10.247748) rotate(360.000000) translate(-25.889349, -10.247748) " />
+        <path
+          d="M33.2800126,37.7397075 L43.3306885,43.5533333 L43.3306885,14.5837402 L33.2800126,20.3973661 L33.2800126,37.7397075 Z"
+          id="Vector-137" fill-opacity="0.600000024" fill="#508CFF"
+          transform="translate(38.305351, 29.068537) rotate(360.000000) translate(-38.305351, -29.068537) " />
+        <path d="M0,29.2651999 L17.5873351,39.4144106 L17.7844071,10.4448188 L0,0 L0,29.2651999 Z"
+          id="Vector-133" fill-opacity="0.600000024" fill="#508CFF"
+          transform="translate(8.892204, 19.707205) scale(1, -1) rotate(-180.000000) translate(-8.892204, -19.707205) " />
+        <path
+          d="M1.97088957,43.5532689 L39.2175126,43.5532689 L20.5361848,32.911377 L1.97088957,43.5532689 Z"
+          id="Vector-155" fill="#2D69FF"
+          transform="translate(20.594201, 38.232323) scale(1, -1) rotate(-180.000000) translate(-20.594201, -38.232323) " />
+      </g>
+    </g>
+  </g>
+</svg>

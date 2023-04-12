@@ -1,0 +1,29 @@
+@ipt-prefix-cls: cusIpt;
+.@{ipt-prefix-cls} {
+  &-wrapper {
+    > .ant-input,
+    > .ant-input-affix-wrapper {
+      width: 100%;
+    }
+    .ant-input-affix-wrapper {
+      padding-left: 30px;
+    }
+  }
+
+  &-SearchLabel {
+    color: @neutral-10;
+    .ant-input-group-addon {
+      color: inherit;
+      background: transparent;
+    }
+
+    .labelBox {
+      // &-icon {
+      //   // margin-right: ;
+      // }
+      &-label {
+        margin-left: 8px;
+      }
+    }
+  }
+}

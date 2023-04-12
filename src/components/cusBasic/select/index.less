@@ -1,0 +1,74 @@
+@select-prefix-cls: cusSelect;
+
+.@{select-prefix-cls} {
+  &-wrapper {
+    > .ant-select {
+      width: 100%;
+
+      .ant-select-selector {
+        padding-left: 30px;
+      }
+    }
+
+    .ant-select-multiple {
+      .ant-select-selection-placeholder {
+        left: 30px;
+      }
+
+      .ant-select-selection-item {
+        color: #0046f0;
+        font-weight: 500;
+        background: #f0f7ff;
+        border-color: #f0f7ff;
+      }
+
+      .ant-select-selection-item-remove > .anticon {
+        color: #508cff;
+        vertical-align: inherit;
+      }
+    }
+
+    // 多选展示所有选中数量
+    &.showTagNum {
+      .ant-select:hover {
+        .tagNumBox-txt {
+          display: none;
+        }
+        .tagNumBox-icon {
+          display: block;
+        }
+      }
+      .ant-select-selector {
+        padding-right: 11px + 14px * 4;
+
+        .ant-select-selection-overflow-item-rest {
+          // display: none;
+          .ant-select-selection-item,
+          .ant-select-selection-item-content {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            border-color: transparent;
+          }
+        }
+      }
+      .ant-select-clear {
+        right: 1px;
+        width: 11px + 14px * 4;
+        padding-right: 11px;
+        opacity: 1;
+
+        .tagNumBox {
+          text-align: right;
+        }
+        .tagNumBox-txt {
+          display: block;
+          color: #5b6887;
+        }
+        .tagNumBox-icon {
+          display: none;
+        }
+      }
+    }
+  }
+}

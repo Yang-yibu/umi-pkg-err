@@ -1,0 +1,96 @@
+引入spreadSdk文件
+1.
+```
+import GC, { SpreadSheets, Worksheet, initSpreadByOptions } from './spreadSdk';
+
+function App() {
+  const [spread, setSpread] = useState('');
+  let initSpread = function (value) {
+const getBindInfo = (bindInfo) =>{
+      console.log(bindInfo,'bindInfo')
+    }
+const getSheetInfo= (sheetInfo)=>{
+      console.log(sheetInfo,'sheetInfo')
+    }
+    const token = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyVHlwZSI6MCwiand0VHlwZSI6InVzZXIiLCJ1c2VySWQiOiIxIiwidGVuYW50SWQiOiIxIiwidXNlcm5hbWUiOiJhZG1pbiIsInNlc3Npb25Ub2tlbiI6IjgzYmQ3OTdlMDVhNzQ1Yjk5MDkzMmFkOTA1MTVhYmZjIiwiaXNzIjoiZHJpZ2h0Iiwic3ViIjoiYWNjZXNzVG9rZW4iLCJpYXQiOjE2Njk4NzQ2NDksIm5iZiI6MTY2OTg3NDU4OX0.UErcZOJgyfJXYzuADYX4zA3D5yU4cku3DSCDbV0Qh0E';
+	 // templateId 模板id
+ 	// authorization token
+	 // spread spreadjs实例
+ 	// sheetData 表格数据
+	// baseURL
+    initSpreadByOptions({ templateId:'26065565894861862636', authorization: token, spread:value, getBindInfo ，getSheetInfo，getSourceData，baseURL  });
+    setSpread(value);
+};
+  return (
+    <div className="App">
+      <SpreadSheets workbookInitialized={(spread) => initSpread(spread)}>
+                    <Worksheet />
+      </SpreadSheets>
+    </div>
+  );
+}
+
+export default App;
+```
+
+
+ // sourceData 数据源信息
+
+ 数据结构:
+```
+{
+    "Sheet6": {
+        "1": {
+            "0": {
+                "tableName": "table_1",
+                "fieldName": "tifled1_2",
+                "dataType": "number"
+            },
+            "1": {
+                "tableName": "table_1",
+                "fieldName": "tifled1_3",
+                "dataType": "number"
+            },
+            "2": {
+                "tableName": "table_1",
+                "fieldName": "tifled1_4",
+                "dataType": "number"
+            }
+        },
+        "2": {
+            "0": {
+                "tableName": "table_1",
+                "fieldName": "tifled2_2",
+                "dataType": "number"
+            },
+            "1": {
+                "tableName": "table_1",
+                "fieldName": "tifled2_3",
+                "dataType": "number"
+            },
+            "2": {
+                "tableName": "table_1",
+                "fieldName": "tifled2_4",
+                "dataType": "number"
+            }
+        },
+        "3": {
+            "0": {
+                "tableName": "table_1",
+                "fieldName": "tifled3_2",
+                "dataType": "number"
+            },
+            "1": {
+                "tableName": "table_1",
+                "fieldName": "tifled3_3",
+                "dataType": "number"
+            },
+            "2": {
+                "tableName": "table_1",
+                "fieldName": "tifled3_4",
+                "dataType": "number"
+            }
+        }
+    }
+}
+```

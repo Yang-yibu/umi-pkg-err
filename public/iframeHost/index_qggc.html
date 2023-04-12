@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全国公务用车管理平台</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      /* padding: 10px; */
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    #subDomainIfr {
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <iframe id="subDomainIfr" name="subDomainIfr" style="width: 100%; height: 100%;"></iframe>
+</body>
+<script>
+
+  const currentHref = window.location.href;
+  const parentHost = window.location.host;
+  // SITE_DOMAIN
+  document.domain = 'jdcloud.com';
+  // const parentPrefix = parentHost + '/ggj_basic/parent';
+  // const childsHost = 'localhost:8001';
+  // const childsPrefix = childsHost + '/ggj_qggc';
+
+  const parentPrefix = parentHost + '';
+  const childsHost = 'zcs.jdcloud.com:82';
+  const childsPrefix = childsHost + '';
+
+  // const src = 'http://localhost:8001/ggj_qggc/';
+  const src = currentHref.replace(parentPrefix, childsPrefix);
+  const ifrSrc = src;
+
+  const subDomainIfr = document.querySelector('#subDomainIfr');
+  subDomainIfr.src = src
+
+  const handleLoad = function () {
+    function locationHashChanged() {
+      const ifrWin = subDomainIfr.contentWindow;
+      const ifrDoc = ifrWin.document;
+      const currentVmHref = ifrWin?.location.href || '';
+      const state = { title: '', url: window.location.href };
+
+      // old       http://localhost:8000/ggj_basic/parent/ aaa
+      // newChild: http://localhost:8001/ggj_qggc/ qggc-index-exp
+      // new       http://localhost:8000/ggj_basic/parent/ qggc-index-exp
+      const newUrl = currentVmHref.replace(childsPrefix, parentPrefix);
+
+      const title = ifrDoc.title || '';
+      window.document.title = title;
+      window.history.replaceState(state, '', newUrl);
+    }
+    // ifrWin.window.onhashchange = locationHashChanged
+    window.childIfrPageChange = function () {
+      setTimeout(() => {
+        locationHashChanged();
+      });
+    };
+  };
+  handleLoad();
+
+  // 太晚了，可能跳转到登录页面 laod 还没触发
+  // subDomainIfr.onload = handleLoad
+  // 可能还没有内容
+  // subDomainIfr.addEventListener('DOMContentLoaded', handleLoad)
+  // 检测页面加载
+  // const timer = setInterval(() => {
+  //   if (subDomainIfr.contentWindow) {
+  //     console.log('hasContent ===>');
+  //     handleLoad()
+  //     clearInterval(timer)
+  //   }
+  // }, 60)
+</script>
+
+</html>

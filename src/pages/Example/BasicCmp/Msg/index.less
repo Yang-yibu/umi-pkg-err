@@ -1,0 +1,28 @@
+.ExpMessage {
+  .alertBox {
+    width: 50%;
+    :global .ant-alert {
+      margin: 10px 0;
+    }
+  }
+  .bg {
+    .dsize() {
+      display: inline-block;
+      min-width: 100px;
+      // height: 20px;
+      margin: 10px;
+      padding: 5px 10px;
+    }
+
+    &-fade {
+      .dsize();
+
+      background: linear-gradient(180deg, fade(@error-6, 100) 0%, fade(@error-6, 60) 100%);
+    }
+    &-rgba {
+      .dsize();
+
+      background: linear-gradient(180deg, rgba(@error-6, 1) 0%, rgba(@error-6, 0.6) 100%);
+    }
+  }
+}

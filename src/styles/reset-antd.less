@@ -1,0 +1,170 @@
+// @import '~antd/es/style/themes/default.less';
+// @import '~antd/dist/antd.less'; // 引入官方提供的 less 样式入口文件
+// @import './variables.less'; // 用于覆盖上面定义的变量
+
+/* --------------------- Antd 的 mixin ---------------------- */
+// 表单项样式调整变量
+// checkbox 圆角 2px 表单项 4px
+.reset-component() {
+  color: @ipt_color;
+  // font-size: @font-size-base;
+}
+
+/* --------------------- Antd 的 mixin end ---------------------- */
+
+// 重置 Antd 组件样式
+
+// pro-card
+.ant-pro-card {
+  .ant-pro-card-split-vertical,
+  .ant-pro-card-split-horizontal,
+  .ant-pro-card-header-border {
+    border-color: @border-color-split;
+  }
+}
+
+body {
+  // >>> antd-tab
+  @tab-prefix-cls: ant-tabs;
+  .@{tab-prefix-cls} {
+    margin: 0;
+    color: @textColor;
+    // color: @error-6;
+
+    // Tabs
+    &-tab {
+      font-size: @textSize;
+      line-height: 24px;
+    }
+    // &-tab + &-tab
+    .@{tab-prefix-cls}-tab + .@{tab-prefix-cls}-tab {
+      margin: 0 0 0 32px;
+    }
+
+    &-top,
+    &-bottom {
+      > .@{tab-prefix-cls}-nav,
+      > div > .@{tab-prefix-cls}-nav {
+        .@{tab-prefix-cls}-ink-bar {
+          height: 4px;
+          background-color: transparent;
+
+          &::after {
+            display: block;
+            width: 30px;
+            height: 100%;
+            margin: 0 auto;
+            background-color: @primary-color-active;
+            content: '';
+          }
+        }
+      }
+    }
+  }
+
+  // >>> form 挨着的表单 合并
+  .ipt-compact {
+    display: inline-flex;
+    // 表单区间样式：左 分割符 右
+    &.iptRange {
+      .ipt-compact-left,
+      .ipt-compact-right {
+        flex: 1;
+      }
+      .ipt-compact-center {
+        width: 30px;
+        pointer-events: 'none';
+      }
+    }
+
+    // 合并表单中三 左 中 右
+    &-left,
+    &-center {
+      // 默认 item 下第一个时 表单元素
+      // .ant-form-item-control-input-content {
+      //   // > .ant-* {
+      //   > *,
+      // }
+
+      .ant-input,
+      .ant-input-affix-wrapper,
+      .ant-picker,
+      .ant-select .ant-select-selector {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+
+        &:focus,
+        &:hover {
+          z-index: 1;
+        }
+      }
+    }
+    &-right,
+    &-center {
+      margin-left: -1px;
+
+      // 默认 item 下第一个时 表单元素
+      // .ant-form-item-control-input-content {
+      // > .ant-* {
+      // > *,
+      // }
+
+      .ant-input,
+      .ant-input-affix-wrapper,
+      .ant-picker,
+      .ant-select .ant-select-selector {
+        // border-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        &:focus,
+        &:hover {
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  // 》》》 表单样式
+  // 自定义表单项前缀 Icon
+  .prefix-icon,
+  .labelBox-icon {
+    color: @ipt_colorIcon;
+  }
+  .debugColor {
+    .prefix-icon,
+    .labelBox-icon {
+      color: red;
+    }
+  }
+  .ant-form {
+    .ant-input,
+    .ant-input-affix-wrapper,
+    .ant-select,
+    .ant-picker {
+      .anticon:not(.anticon-close-circle) {
+        color: @ipt_colorIcon;
+      }
+    }
+
+    .ant-switch {
+      background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+        linear-gradient(rgba(84, 138, 255, 0.15), rgba(84, 138, 255, 0.15)),
+        linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+
+      &.ant-switch-checked {
+        background: linear-gradient(180deg, rgba(45, 105, 255, 1) 0%, rgba(80, 140, 255, 1) 100%);
+      }
+    }
+
+    .ant-upload {
+      color: @ipt_color;
+
+      &.ant-upload-disabled {
+        color: @ipt_colorDis;
+      }
+      &.ant-upload-select-picture-card {
+        background-color: rgba(#000, 0.04);
+      }
+    }
+  }
+}

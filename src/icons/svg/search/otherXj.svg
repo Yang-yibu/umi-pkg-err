@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>新@4x</title>
+  <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"
+    stroke-linejoin="round">
+    <g id="操作筛选区icon样式设计规范" transform="translate(-384.000000, -656.000000)" stroke="#1E283C"
+      stroke-width="1.8">
+      <g id="新旧程度" transform="translate(369.000000, 646.000000)">
+        <g id="新" transform="translate(16.000000, 11.000000)">
+          <path
+            d="M9,18 C13.970565,18 18,13.970565 18,9 C18,4.029435 13.970565,0 9,0 C4.029435,0 0,4.029435 0,9 C0,13.970565 4.029435,18 9,18 Z"
+            id="路径" />
+          <path
+            d="M13.29408,10.35 C12.720645,12.175695 11.01501,13.5 9.00009,13.5 C6.98517,13.5 5.279535,12.175695 4.7061,10.35 L4.7061,13.05"
+            id="路径" />
+          <path
+            d="M13.29408,4.95 L13.29408,7.65 C12.720645,5.824305 11.01501,4.5 9.00009,4.5 C6.98517,4.5 5.279535,5.824305 4.7061,7.65"
+            id="路径" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
